@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Training_Assignment</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Attendee__c.Email__c</members>
+        <members>Attendee__c.Name__c</members>
+        <members>Attendee__c.Phone__c</members>
+        <members>Attendee__c.Training_Session__c</members>
+        <members>Feedback__c.Comments__c</members>
+        <members>Feedback__c.Rating__c</members>
+        <members>Feedback__c.Session__c</members>
+        <members>Feedback__c.Training_Session__c</members>
+        <members>Training_Session__c.Location__c</members>
+        <members>Training_Session__c.Name__c</members>
+        <members>Training_Session__c.Session_Date__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Attendee__c</members>
+        <members>Feedback__c</members>
+        <members>Training_Session__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Attendee__c</members>
+        <members>Feedback__c</members>
+        <members>Training_Session__c</members>
+        <name>CustomTab</name>
+    </types>
+    <version>60.0</version>
+</Package>
