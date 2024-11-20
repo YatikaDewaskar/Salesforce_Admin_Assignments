@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Opportunity.CL_For_Opportunity</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
+        <members>DreamWorld</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Page_on_Opportunity</members>
+        <members>Training_Assignment_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PathAssistant</name>
+    </types>
+    <version>60.0</version>
+</Package>
