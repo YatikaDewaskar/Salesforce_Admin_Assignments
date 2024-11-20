@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Opportunity.CL_For_Opportunity</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
+        <members>Training_Assignment</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Training_Session__c.Location__c</members>
+        <members>Training_Session__c.Name__c</members>
+        <members>Training_Session__c.Session_Date__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Student_c__c</members>
+        <members>Training_Session__c</members>
+        <members>User__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Attendee__c</members>
+        <members>Class__c</members>
+        <members>Demo_User__c</members>
+        <members>Feedback__c</members>
+        <name>CustomTab</name>
+    </types>
+    <version>60.0</version>
+</Package>

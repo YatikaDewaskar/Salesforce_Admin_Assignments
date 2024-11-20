@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RestrictionRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <enforcementType>Restrict</enforcementType>
+    <masterLabel>RR for Profile</masterLabel>
+    <recordFilter>CreatedById=&apos;a07NS00000J6whZYAR&apos;</recordFilter>
+    <targetEntity>Feedback__c</targetEntity>
+    <userCriteria>$User.ProfileId=&apos;2F00eNS000002fiyP&apos;</userCriteria>
+    <version>1</version>
+</RestrictionRule>
