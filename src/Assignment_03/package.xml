@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Opportunity.CL_For_Opportunity</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
+        <members>DreamWorld</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>School__c.Active__c</members>
+        <members>School__c.Country__c</members>
+        <members>School__c.State__c</members>
+        <members>Student_c__c.Class__c</members>
+        <members>Student_c__c.Date_of_Birth__c</members>
+        <members>User__c.User_FullName__c</members>
+        <members>User__c.User_ID__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Student_c__c</members>
+        <members>User__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Demo_User__c</members>
+        <members>Student_c__c</members>
+        <name>CustomTab</name>
+    </types>
+    <version>60.0</version>
+</Package>
