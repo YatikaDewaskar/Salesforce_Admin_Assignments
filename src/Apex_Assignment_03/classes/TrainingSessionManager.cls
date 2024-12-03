@@ -16,14 +16,14 @@ public without sharing class TrainingSessionManager {
     * Return type : void 
     * Revision Logs : V1 Created 
     */
-    public void createTrainingSessionRecords(){
+    public static void createTrainingSessionRecords(){
         try{
-            List<Training_Session__c> trainingSessionList = new List<Training_Session__c>();
+            List<Training_Session__c> addTrainingSession = new List<Training_Session__c>();
             for(Integer i = 0 ; i<5 ; i++){
                 Training_Session__c tsc = new Training_Session__c(Name = 'Training Session'+i , Location__c = 'Jaipur');
-                trainingSessionList.add(tsc);
+               addTrainingSession.add(tsc);
             }
-            insert trainingSessionList;
+            insert addTrainingSession;
         }
         catch(DmlException e){
             System.debug('Exception has Occured '+e.getMessage());
@@ -36,16 +36,21 @@ public without sharing class TrainingSessionManager {
     * Created Date : 11/27/2024
     * Return type : void 
     * Revision Logs : V1 Created 
+    * 				  V2 Updated Method & Variable Name
     */
-    public void updateTrainingSessionRecord(){
+    public static void updateTrainingSessionRecord(){
         try{
-            List<Training_Session__c> trainingSessionList = [SELECT Name FROM Training_Session__c WHERE Location__c = 'Jaipur'];
-            Date d = System.Today() + 30;
-            for(Integer i=0; i<10; i++){
-                Training_Session__c tsc = new Training_Session__c(Name = 'TrainingSession' + ++i + 'Updated', Session_Date__c = d);
-                trainingSessionList.add(tsc);
+            List<Training_Session__c> updatedRecords = new List<Training_Session__c>() ;
+            Date myDate = Date.newInstance(2024, 12, 02);
+			Date newDate = mydate.addDays(30);
+            Integer i = 1;
+            for(Training_Session__c eachRecordToUpdate : [SELECT Name, Session_Date__c FROM Training_Session__c WHERE Location__c = 'Jaipur'] ){
+                eachRecordToUpdate.Name = eachRecordToUpdate.Name + i;
+                eachRecordToUpdate.Session_Date__c = newDate;
+                i++;
+                updatedRecords.add(eachRecordToUpdate);
             }
-            update trainingSessionList;
+            update updatedRecords;
         }
         catch(DmlException e){
             System.debug('Exception has Occured '+e.getMessage());
@@ -57,11 +62,12 @@ public without sharing class TrainingSessionManager {
     * Created Date : 11/27/2024
     * Return type : void 
     * Revision Logs : V1 Created 
+    * 				  V2 Updated Method & Variable Name
     */
-    public void deleteTrainingSessionRecord(){
+    public static void deleteTrainingSessionRecord(ID recordId){
         try{
-            List<Training_Session__c> trainingSessionList = [SELECT Name, Session_Date__c, 	Location__c FROM Training_Session__c WHERE Id = 'a05NS000007T97XYAS'];
-            delete trainingSessionList;
+            List<Training_Session__c> deleteRecordTrainingSession = [SELECT Name, Session_Date__c, 	Location__c FROM Training_Session__c WHERE Id = :recordId];
+            delete deleteRecordTrainingSession;
         }
         catch(DmlException e){
             System.debug('Exception has Occured '+e.getMessage());
@@ -73,12 +79,13 @@ public without sharing class TrainingSessionManager {
     * Created Date : 11/27/2024
     * Return type : void 
     * Revision Logs : V1 Created 
+    * 				  V2 Updated Method & Variable Name
     */
     public void readTrainingSessionRecord(){
         try{
-            List<Training_Session__c> trainingSessionList = [SELECT Name, Session_Date__c, 	Location__c, Average_Rating__c, Total_Attendee_Count__c FROM Training_Session__c ];
-            for( Integer i=0; i<10; i++){
-                System.debug(trainingSessionList[i]);
+            List<Training_Session__c> recordsFromTrainingSession = new  List<Training_Session__c>();
+            for(Training_Session__c eachTrainingSessionRecord : [SELECT Name, Session_Date__c, Location__c, Average_Rating__c, Total_Attendee_Count__c FROM Training_Session__c] ){
+                System.debug(eachTrainingSessionRecord);
             }
         }
         catch(DmlException e){
@@ -110,7 +117,7 @@ public without sharing class TrainingSessionManager {
         insert attendeeList;
      }
      /*
-    * Description : Method to add attendees to a training session, ensuring that each attendee is only added once using a Set<Id>.
+    * Description : Created enum for Categorizing Training CategorizeTrainingSessionsSessions
     * Created By : Yatika Dewaskar
     * Created Date : 11/27/2024
     * Return type : void 
