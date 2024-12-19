@@ -18,7 +18,7 @@ public class DailyLeadProcessorTest{
     
     @isTest
     static void testUpdateLeadPostiveTest(){
-        try{
+      
         Test.startTest();
         String jobID = System.schedule('Update lead', sch, new DailyLeadProcessor());
         Test.stopTest();
@@ -26,11 +26,6 @@ public class DailyLeadProcessorTest{
         List<Lead> updatedLeads = [SELECT Id, LeadSource FROM Lead];
         for(Lead leads : updatedLeads){
             Assert.areEqual('Dreamforce', lead.LeadSource);
-        }
-        }
-        catch(exception e){
-            string error = e.getMessage();
-            System.debug(error);
         }
     }
     
