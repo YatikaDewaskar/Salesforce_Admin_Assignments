@@ -17,7 +17,7 @@ public class LeadProcessorTest {
     
     @isTest
     static void testUpdateLeadPostiveTest(){
-        try{
+       
         Test.startTest();
         LeadProcessor batch = new LeadProcessor();
         Database.executeBatch(batch);
@@ -26,11 +26,6 @@ public class LeadProcessorTest {
         List<Lead> updatedLeads = [SELECT Id, LeadSource FROM Lead];
         for(Lead leads : updatedLeads){
             Assert.areEqual('Dreamforce', lead.LeadSource);
-        }
-        }
-        catch(exception e){
-            string error = e.getMessage();
-            System.debug(error);
         }
     }
     
