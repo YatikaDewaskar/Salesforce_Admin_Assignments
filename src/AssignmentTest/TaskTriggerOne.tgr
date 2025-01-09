@@ -1,0 +1,25 @@
+trigger TaskTriggerOne on Task (after insert, after delete, after update, after undelete) {
+/*    
+       if(Trigger.isAfter)
+    {
+        if(Trigger.isInsert)
+        {
+            tasktriggerhandler.counttheTaskDisplayOnAccount(Trigger.New, null);
+        }
+        
+        if(Trigger.isUpdate)
+        {
+             tasktriggerhandler.counttheTaskDisplayOnAccount(Trigger.New, Trigger.OldMap);
+        }
+        if(Trigger.isDelete)
+        {
+            tasktriggerhandler.counttheTaskDisplayOnAccount(Trigger.old, null);
+        }
+          if(Trigger.isundelete)
+        {
+            tasktriggerhandler.counttheTaskDisplayOnAccount(Trigger.New, null);
+        }
+       
+    }
+  */       
+}
