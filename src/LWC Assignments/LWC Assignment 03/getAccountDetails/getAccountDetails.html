@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Account Details">
+       <lightning-record-view-form
+            object-api-name={accountObj}
+            record-id={recordId}
+            density="Compact">
+        <lightning-output-field field-name={Name}></lightning-output-field>  
+        <lightning-output-field field-name={company}></lightning-output-field>  
+        <lightning-output-field field-name={website}></lightning-output-field>  
+        <lightning-output-field field-name={phone}></lightning-output-field>  
+
+        </lightning-record-view-form>
+        <lightning-button label="New Contact" onclick={handleCreateContact}></lightning-button>
+        <template if:true={iscreateContact}>
+            
+        <lightning-card title="Related Contact">
+            <div>
+             <lightning-record-edit-form
+                object-api-name={contactObj}
+                onsuccess={saveCreateContact}
+                density="Compact">
+               
+                <lightning-input-field field-name={FirstNamefield}></lightning-input-field>
+                <lightning-input-field field-name={LastNamefield}></lightning-input-field>
+                <lightning-input-field field-name="AccountId" value={recordId}></lightning-input-field>
+                <lightning-input-field field-name={Phonefield}></lightning-input-field>
+                <lightning-input-field field-name={Emailfield}></lightning-input-field>
+          <!--      <lightning-input-field field-name={accountId}></lightning-input-field> -->
+               
+               <lightning-button variant="brand" type="submit" name="save" label="Save"></lightning-button>
+                
+            </lightning-record-edit-form>
+        </div> 
+      
+        </lightning-card>
+        </template>
+    </lightning-card>
+
+   
+</template>
