@@ -27,18 +27,6 @@ export default class GetAccountDetails extends LightningElement {
     Emailfield = Email;
     Phonefield = Phone;
     iscreateContact = false;
-   
-   /*
-    @wire(getRecord, { recordId: '$recordId', fields: [Name_Field, Company_FIELD,Website_FIELD, Phone_FIELD] })
-    wiredAccount({ error, data }) {
-        if (data) {
-            this.accountData = data;
-            this.error = undefined;
-        } else if (error) {
-            this.error = error;
-            this.accountData = undefined;
-        }
-    }*/
 
     handleCreateContact(event){
        this.iscreateContact = true;
@@ -47,13 +35,13 @@ export default class GetAccountDetails extends LightningElement {
 
 
     saveCreateContact(){
-        /*const events = new ShowToastEvent({
+       const events = new ShowToastEvent({
             title: 'Contact Created',
             message: 'Contact Created Successfully',
             variant: 'success'
         });
         this.dispatchEvent(event);
-*/      console.log("successfully created");
+        console.log("successfully created");
         this.iscreateContact = false;
     }
 
