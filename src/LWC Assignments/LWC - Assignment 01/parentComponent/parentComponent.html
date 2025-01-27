@@ -1,0 +1,15 @@
+<template>
+    <p>Hello, World!</p>
+<!--
+   <div>
+        <lightning-button label="Click Message" onclick={handleMessage}></lightning-button>
+    </div>
+    <div>
+        <lightning-button label="Click Method" onclick={handleMethod}></lightning-button>
+    </div>
+-->
+    <div>
+       <lightning-input type="text" label = 'Greetings' value={parentGreetting} onchange={handleChangeGreetings}></lightning-input>
+    </div>
+    <c-child-component message={parentGreetting}></c-child-component>
+</template>
