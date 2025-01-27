@@ -1,0 +1,7 @@
+<template>
+    <p>Hello, World!</p>
+    <div>
+       <lightning-input type="text" label = 'Greetings' value={parentGreetting} onchange={handleChangeGreetings}></lightning-input>
+    </div>
+    <c-child-component message={parentGreetting}></c-child-component>
+</template>
