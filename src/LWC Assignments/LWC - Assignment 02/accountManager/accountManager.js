@@ -1,19 +1,15 @@
-import { LightningElement, wire, track } from 'lwc';
+import { LightningElement, wire} from 'lwc';
 import getAccounts from '@salesforce/apex/GetAccountsForLWCDataTable.getAccounts';
 
 const columns = [
     { label: 'Name', fieldName: 'Name' },
-    { label: 'Id', fieldName: 'Id' }
-     
+    { label: 'Id', fieldName: 'Id' }     
 ];
 
 export default class accountManager extends LightningElement {
-    @track columns = columns;
-   // @track data = [];
-    @track accounts;
-
-
-    @wire(getAccounts)
+   columns = columns;
+   accounts;
+  @wire(getAccounts)
     wiredAccounts({ error, data })
     {
         if(data)
