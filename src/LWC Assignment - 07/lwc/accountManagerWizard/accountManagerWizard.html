@@ -1,0 +1,70 @@
+<template>
+    <lightning-card title="Account Manager Wizard">
+
+        <lightning-button label="Account Manager Wizard"  onclick={handleGetAccount}></lightning-button>
+        <template lwc:if={isGetAccount}>
+          <article class="slds-card">
+            
+            <div class="slds-card__header slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-assistive-text">account</span>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <a href="#" class="slds-card__header-link slds-truncate" title="Accounts">
+                      <span>Accounts Details</span>
+                    </a>
+                  </h2>
+                  <div class="slds-card__body slds-card__body_inner">
+                    <p><b>Account Name :</b> {name}</p>
+                    <p><b>Account Owner :</b> {owner}</p>
+                    <p><b>Number of Contacts :</b> {numberofContacts}</p>
+                    <p><b>Description :</b> {description}</p>  
+                </div>
+                </div>
+              </header>
+            </div>
+          
+            <footer class="slds-card__footer">
+              <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_2-of-3">
+                  <h3>Search Contacts</h3>
+                  <!--Search Input-->
+                  <lightning-input  value={searchKey} onchange = {handleSearchContact}></lightning-input>
+                  <!--Search Output-->
+                  <lightning-card >
+                    <template lwc:if={filterData}>
+                      <lightning-datatable
+                        key-field="id"
+                        data={contactsSearchData}
+                        columns={columns}>   
+                      </lightning-datatable>
+                    </template>
+                    <template lwc:else>
+                    <lightning-datatable
+                      key-field="id"
+                      data={contacts}
+                      columns={columns}>   
+                    </lightning-datatable> 
+                    </template>
+                    
+                    </lightning-card>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                  <button class="slds-button slds-button_brand" onclick= {handleCreateContact}>Create New Contact</button>
+                  <template lwc:if={isCreateContact}>
+                    <c-contact-save-form accountid={recordId} onsavecontact={handleSaveContact}></c-contact-save-form>
+                                         
+                  </template>
+                </div>
+              </div>
+              
+            </footer>
+          </article>
+
+        </template>
+    </lightning-card>
+    
+</template>
