@@ -1,0 +1,25 @@
+<template> 
+    <lightning-card title="Generic PickList" icon-name="standard:record">
+
+    <lightning-input type="text" 
+                      label="Object Name" 
+                      placeholder="Enter Object Name"
+                      value={objectName} 
+                      onchange={handleObjectNameChange}>
+    </lightning-input>
+    <lightning-input type="text" 
+                      label="Field Name" 
+                      placeholder="Enter Field Name"
+                      value={fieldName} 
+                      onchange={handleFieldNameChange}>
+    </lightning-input>
+    <lightning-combobox
+                    name="inputType"
+                    label="PickList Values"
+                    value={inputType}
+                    options={picklistValues}>
+    </lightning-combobox>
+ 
+
+</lightning-card>
+</template>
