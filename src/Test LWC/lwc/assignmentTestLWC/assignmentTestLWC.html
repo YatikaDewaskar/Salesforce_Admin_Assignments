@@ -1,0 +1,20 @@
+<template>
+    <div>
+        <lightning-button label="Create Account" onclick={handleCreateAccount}></lightning-button>
+        <template lwc:if={isOpenCreateAccount}>
+            <c-create-account-popup></c-create-account-popup>     
+        </template>
+        <lightning-card>
+            <lightning-datatable
+                     key-field="id"
+                    data={accounts}
+                    columns={columns}> 
+            >
+
+            </lightning-datatable>
+        </lightning-card>
+        
+           
+    </div>
+    
+</template>
