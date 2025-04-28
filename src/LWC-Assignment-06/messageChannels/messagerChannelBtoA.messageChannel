@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Lightning Message Channel sends Message From MessagerB to MessagerA</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Input field where the user can enter a message B to send MessagerA</description>
+        <fieldName>inputMessagerB</fieldName>
+    </lightningMessageFields>
+    <masterLabel>MessagerChannel</masterLabel>
+</LightningMessageChannel>
